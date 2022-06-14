@@ -7,7 +7,9 @@ metadata:
   labels:
     pricelist-storage: "yes"
 spec:
-  storageClassName: ""
+  nfs:
+   path: /ocp-volume
+   server: 192.168.201.101
   capacity:
     storage: 1Gi
   volumeMode: Filesystem
@@ -17,16 +19,16 @@ spec:
   claimRef:
     name: pricelist-db-pvc
     namespace: pricelist
-  csi:
-    driver: ebs.csi.aws.com
-    # volumeId from: aws ec2 create-volume --region=us-east-1 --availability-zone=us-east-1a --size=1 --volume-type=gp2
-    volumeHandle: vol-000aaabbbccddee99
-    fsType: xfs
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: topology.ebs.csi.aws.com/zone
-          operator: In
-          values:
-          - us-east-1a
+  # csi:
+  #   driver: ebs.csi.aws.com
+  #   # volumeId from: aws ec2 create-volume --region=us-east-1 --availability-zone=us-east-1a --size=1 --volume-type=gp2
+  #   volumeHandle: vol-000aaabbbccddee99
+  #   fsType: xfs
+  # nodeAffinity:
+  #   required:
+  #     nodeSelectorTerms:
+  #     - matchExpressions:
+  #       - key: topology.ebs.csi.aws.com/zone
+  #         operator: In
+  #         values:
+  #         - us-east-1a
