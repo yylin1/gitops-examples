@@ -8,7 +8,7 @@ metadata:
     pricelist-storage: "yes"
 spec:
   nfs:
-   path: /ocp-exmaples
+   path: /ocp-examples
    server: 192.168.201.101
   capacity:
     storage: 1Gi
