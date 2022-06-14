@@ -23,15 +23,6 @@ spec:
         app: mysql
         tier: database
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: topology.ebs.csi.aws.com/zone
-                operator: In
-                values:
-                - us-east-1a
       serviceAccountName: pricelist-db-sa
       securityContext:
         supplementalGroups: [65534]
