@@ -26,6 +26,7 @@ spec:
       serviceAccountName: pricelist-db-sa
       securityContext:
         supplementalGroups: [65534]
+        runAsUser: 1000870000
       containers:
       - name: mysql
         image: registry.access.redhat.com/rhscl/mysql-56-rhel7:latest
