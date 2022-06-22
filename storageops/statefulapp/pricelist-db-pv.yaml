@@ -7,12 +7,18 @@ metadata:
   labels:
     pricelist-storage: "yes"
 spec:
-  nfs:
-   path: /ocp-examples
-   server: 192.168.203.101
+  iscsi:
+    targetPortal: 192.168.203.101:3260
+    iqn: iqn.2004-04.com.qnap:ts-932x:iscsi.ocp.28d738
+    lun: 0
+    fsType: 'ext4'
+    readOnly: false
+  # nfs:
+  #  path: /ocp-examples
+  #  server: 192.168.203.101
+  #volumeMode: Filesystem
   capacity:
     storage: 1Gi
-  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
