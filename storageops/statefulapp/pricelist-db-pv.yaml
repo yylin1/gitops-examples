@@ -13,10 +13,6 @@ spec:
     lun: 0
     fsType: 'ext4'
     readOnly: false
-  # nfs:
-  #  path: /ocp-examples
-  #  server: 192.168.203.101
-  #volumeMode: Filesystem
   capacity:
     storage: 1Gi
   accessModes:
