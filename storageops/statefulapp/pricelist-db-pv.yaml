@@ -9,7 +9,7 @@ metadata:
 spec:
   nfs:
    path: /ocp-examples
-   server: 192.168.203.101
+   server: 192.168.201.101
   volumeMode: Filesystem
   capacity:
     storage: 1Gi
